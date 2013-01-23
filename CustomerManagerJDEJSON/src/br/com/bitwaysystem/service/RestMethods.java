@@ -13,6 +13,7 @@ import org.apache.http.protocol.HttpContext;
 
 import android.util.Log;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
+import br.com.bitwaysystem.json.JSONtoJava;
 
 public class RestMethods {
 
@@ -30,7 +31,7 @@ public class RestMethods {
 		return out.toString();
 	}
 
-	public static String ShowCustomerCreditInformation(
+	public static ShowCustomerCreditInformation showCredit(
 			ShowCustomerCreditInformation showCustomerCI) {
 
 		HttpClient httpClient = new DefaultHttpClient();
@@ -45,9 +46,9 @@ public class RestMethods {
 			HttpEntity entity = response.getEntity();
 			text = getASCIIContentFromEntity(entity);
 		} catch (Exception e) {
-			return e.getLocalizedMessage();
+			 e.getLocalizedMessage();
 		}
 		Log.w("teste", text.toString());
-		return text;
+		return JSONtoJava.showCredit(text);
 	}
 }

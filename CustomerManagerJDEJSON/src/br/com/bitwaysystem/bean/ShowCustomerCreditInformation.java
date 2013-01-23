@@ -1,11 +1,13 @@
 package br.com.bitwaysystem.bean;
 
 public class ShowCustomerCreditInformation {
-
-	private boolean creditHoldExempt;
-	private Double amountTotalExposure;
+	
 	private double amountCreditLimit;
-	Entity entity;
+	private Double amountTotalExposure;
+	private boolean creditHoldExempt;
+	private String e1MessageList;
+	private Entity entity;
+	
 
 	public ShowCustomerCreditInformation() {
 		super();
@@ -16,13 +18,23 @@ public class ShowCustomerCreditInformation {
 		this.entity = entity;
 	}
 
-	public ShowCustomerCreditInformation(boolean creditHoldExempt,
-			Double amountTotalExposure, double amountCreditLimit, Entity entity) {
+	public ShowCustomerCreditInformation(String e1MessageList,
+			boolean creditHoldExempt, Double amountTotalExposure,
+			Entity entity, double amountCreditLimit) {
 		super();
+		this.e1MessageList = e1MessageList;
 		this.creditHoldExempt = creditHoldExempt;
 		this.amountTotalExposure = amountTotalExposure;
-		this.amountCreditLimit = amountCreditLimit;
 		this.entity = entity;
+		this.amountCreditLimit = amountCreditLimit;
+	}
+
+	public String getE1MessageList() {
+		return e1MessageList;
+	}
+
+	public void setE1MessageList(String e1MessageList) {
+		this.e1MessageList = e1MessageList;
 	}
 
 	public boolean isCreditHoldExempt() {
@@ -41,20 +53,20 @@ public class ShowCustomerCreditInformation {
 		this.amountTotalExposure = amountTotalExposure;
 	}
 
-	public double getAmountCreditLimit() {
-		return amountCreditLimit;
-	}
-
-	public void setAmountCreditLimit(double amountCreditLimit) {
-		this.amountCreditLimit = amountCreditLimit;
-	}
-
 	public Entity getEntity() {
 		return entity;
 	}
 
 	public void setEntity(Entity entity) {
 		this.entity = entity;
+	}
+
+	public double getAmountCreditLimit() {
+		return amountCreditLimit;
+	}
+
+	public void setAmountCreditLimit(double amountCreditLimit) {
+		this.amountCreditLimit = amountCreditLimit;
 	}
 
 }

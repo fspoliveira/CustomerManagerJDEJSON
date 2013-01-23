@@ -1,18 +1,16 @@
 package br.com.bitwaysystem.activity;
 
+import android.R.string;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import br.com.bitwaysystem.bean.Entity;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 import br.com.bitwaysystem.service.RestMethods;
 import com.example.customermanagerjdejson.R;
@@ -51,7 +49,10 @@ public class GetCustomerCreditInfo extends Activity implements
 
 		ShowCustomerCreditInformation customer = new ShowCustomerCreditInformation(
 				entity);
-		RestMethods.ShowCustomerCreditInformation(customer);
+		
+		ShowCustomerCreditInformation response = RestMethods.showCredit(customer);		
+		
+		Log.w("Olha o que voltou do response" , String.valueOf(response.getAmountCreditLimit()));
 
 	}
 

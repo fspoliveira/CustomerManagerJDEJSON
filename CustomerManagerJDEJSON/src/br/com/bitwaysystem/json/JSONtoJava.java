@@ -6,10 +6,10 @@ import com.google.gson.Gson;
 
 public class JSONtoJava {
 
-	public ShowCustomerCreditInformation showCredit(String json) {
+	public static ShowCustomerCreditInformation showCredit(String strJson) {
 		Gson gson = new Gson();
 
-		ShowCustomerCreditInformation customer = gson.fromJson(json,
+		ShowCustomerCreditInformation customer = gson.fromJson(strJson,
 				ShowCustomerCreditInformation.class);
 		return customer;
 	}
