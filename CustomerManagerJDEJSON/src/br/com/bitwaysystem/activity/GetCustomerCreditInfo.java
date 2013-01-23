@@ -1,6 +1,5 @@
 package br.com.bitwaysystem.activity;
 
-import android.R.string;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import br.com.bitwaysystem.bean.Entity;
@@ -37,6 +36,9 @@ public class GetCustomerCreditInfo extends Activity implements
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		
+		TextView LimiteDeCredito = (TextView) findViewById(R.id.txt_Limite);
+		
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
@@ -50,9 +52,9 @@ public class GetCustomerCreditInfo extends Activity implements
 		ShowCustomerCreditInformation customer = new ShowCustomerCreditInformation(
 				entity);
 		
-		ShowCustomerCreditInformation response = RestMethods.showCredit(customer);		
+		ShowCustomerCreditInformation response = RestMethods.showCredit(customer);
 		
-		Log.w("Olha o que voltou do response" , String.valueOf(response.getAmountCreditLimit()));
+		LimiteDeCredito.setText(String.valueOf(response.getAmountCreditLimit()));		
 
 	}
 

@@ -2,7 +2,6 @@ package br.com.bitwaysystem.service;
 
 import java.io.IOException;
 import java.io.InputStream;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -10,8 +9,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
-
-import android.util.Log;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 import br.com.bitwaysystem.json.JSONtoJava;
 
@@ -46,9 +43,10 @@ public class RestMethods {
 			HttpEntity entity = response.getEntity();
 			text = getASCIIContentFromEntity(entity);
 		} catch (Exception e) {
-			 e.getLocalizedMessage();
+			e.getLocalizedMessage();
 		}
-		Log.w("teste", text.toString());
-		return JSONtoJava.showCredit(text);
+		
+		ShowCustomerCreditInformation showCreditInfo = JSONtoJava.showCredit(text);
+		return showCreditInfo;
 	}
 }
