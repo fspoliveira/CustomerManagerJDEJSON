@@ -39,6 +39,10 @@ public class GetCustomerCreditInfo extends Activity implements
 		TextView LimiteDeCredito = (TextView) findViewById(R.id.txt_Limite);
 		TextView CNPJouCPF = (TextView) findViewById(R.id.txt_CNPJCPF);
 		
+		/*Reset variables*/
+		LimiteDeCredito.setText("0");
+		CNPJouCPF.setText("0");
+		
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
