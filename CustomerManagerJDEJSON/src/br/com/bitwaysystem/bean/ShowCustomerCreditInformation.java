@@ -1,13 +1,11 @@
 package br.com.bitwaysystem.bean;
 
-import java.util.List;
-
 public class ShowCustomerCreditInformation {
 	
 	private double amountCreditLimit;
 	private Double amountTotalExposure;
 	private boolean creditHoldExempt;
-	private List e1MessageList;
+	private String[] e1MessageList;
 	private Entity entity;
 	
 	public ShowCustomerCreditInformation() {
@@ -18,10 +16,9 @@ public class ShowCustomerCreditInformation {
 		super();
 		this.entity = entity;
 	}
-
 	public ShowCustomerCreditInformation(double amountCreditLimit,
 			Double amountTotalExposure, boolean creditHoldExempt,
-			List e1MessageList, Entity entity) {
+			String[] e1MessageList, Entity entity) {
 		super();
 		this.amountCreditLimit = amountCreditLimit;
 		this.amountTotalExposure = amountTotalExposure;
@@ -54,14 +51,6 @@ public class ShowCustomerCreditInformation {
 		this.creditHoldExempt = creditHoldExempt;
 	}
 
-	public List getE1MessageList() {
-		return e1MessageList;
-	}
-
-	public void setE1MessageList(List e1MessageList) {
-		this.e1MessageList = e1MessageList;
-	}
-
 	public Entity getEntity() {
 		return entity;
 	}
@@ -70,4 +59,11 @@ public class ShowCustomerCreditInformation {
 		this.entity = entity;
 	}
 
+	public String[] getE1MessageList() {
+		return e1MessageList;
+	}
+
+	public void setE1MessageList(String[] e1MessageList) {
+		this.e1MessageList = e1MessageList;
+	}
 }

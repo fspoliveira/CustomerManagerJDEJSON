@@ -2,8 +2,8 @@ package br.com.bitwaysystem.bean;
 
 public class Entity {
 
-	private int entityLongId;
-	private int entityTaxId;
+	private String entityLongId;
+	private String entityTaxId;
 	private int entityId;
 
 	public Entity() {
@@ -15,26 +15,26 @@ public class Entity {
 		this.entityId = entityId;
 	}
 
-	public Entity(int entityLongId, int entityTaxId, int entityId) {
+	public Entity(String entityLongId, String entityTaxId, int entityId) {
 		super();
 		this.entityLongId = entityLongId;
 		this.entityTaxId = entityTaxId;
 		this.entityId = entityId;
 	}
 
-	public int getEntityLongId() {
+	public String getEntityLongId() {
 		return entityLongId;
 	}
 
-	public void setEntityLongId(int entityLongId) {
+	public void setEntityLongId(String entityLongId) {
 		this.entityLongId = entityLongId;
 	}
 
-	public int getEntityTaxId() {
+	public String getEntityTaxId() {
 		return entityTaxId;
 	}
 
-	public void setEntityTaxId(int entityTaxId) {
+	public void setEntityTaxId(String entityTaxId) {
 		this.entityTaxId = entityTaxId;
 	}
 
@@ -45,4 +45,5 @@ public class Entity {
 	public void setEntityId(int entityId) {
 		this.entityId = entityId;
 	}
+
 }

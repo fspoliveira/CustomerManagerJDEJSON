@@ -5,7 +5,6 @@ import android.app.Activity;
 import br.com.bitwaysystem.bean.Entity;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +37,7 @@ public class GetCustomerCreditInfo extends Activity implements
 		// TODO Auto-generated method stub
 		
 		TextView LimiteDeCredito = (TextView) findViewById(R.id.txt_Limite);
+		TextView CNPJouCPF = (TextView) findViewById(R.id.txt_CNPJCPF);
 		
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
@@ -54,7 +54,11 @@ public class GetCustomerCreditInfo extends Activity implements
 		
 		ShowCustomerCreditInformation response = RestMethods.showCredit(customer);
 		
-		LimiteDeCredito.setText(String.valueOf(response.getAmountCreditLimit()));		
+		LimiteDeCredito.setText(String.valueOf(response.getAmountCreditLimit()));
+		
+		if(!String.valueOf(response.getEntity().getEntityTaxId()).equals("")){
+			CNPJouCPF.setText(String.valueOf(response.getEntity().getEntityTaxId()));			
+		}
 
 	}
 
