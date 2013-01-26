@@ -23,6 +23,9 @@ public class JSONtoJava {
 
 			customer.setAmountCreditLimit(userObject1
 					.getDouble("amountCreditLimit"));
+			
+			customer.setAmountTotalExposure(userObject1
+					.getDouble("amountTotalExposure"));
 
 			JSONObject entityJSON = (JSONObject) userObject1.get("entity");
 

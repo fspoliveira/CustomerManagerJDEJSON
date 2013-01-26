@@ -36,17 +36,18 @@ public class GetCustomerCreditInfo extends Activity implements
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		
-		TextView LimiteDeCredito = (TextView) findViewById(R.id.txt_Limite);
-		TextView CNPJouCPF = (TextView) findViewById(R.id.txt_CNPJCPF);
+		TextView limiteDeCredito = (TextView) findViewById(R.id.txt_Limite);
+		TextView cnpjOucpf = (TextView) findViewById(R.id.txt_CNPJCPF);
+		TextView pedidoAberto = (TextView) findViewById(R.id.txt_PedidoAberto);
 		
 		/*Reset variables*/
-		LimiteDeCredito.setText("0");
-		CNPJouCPF.setText("0");
+		limiteDeCredito.setText("0");
+		cnpjOucpf.setText("0");
 		
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
-		TextView idCliente_txt = (TextView) findViewById(R.id.idCliente_txt);
+		TextView idCliente_txt = (TextView) findViewById(R.id.txt_idCliente);
 
 		int idCliente_an8 = Integer
 				.parseInt(idCliente_txt.getText().toString());
@@ -58,10 +59,14 @@ public class GetCustomerCreditInfo extends Activity implements
 		
 		ShowCustomerCreditInformation response = RestMethods.showCredit(customer);
 		
-		LimiteDeCredito.setText(String.valueOf(response.getAmountCreditLimit()));
+		limiteDeCredito.setText(String.valueOf(response.getAmountCreditLimit()));
 		
 		if(!String.valueOf(response.getEntity().getEntityTaxId()).equals("")){
-			CNPJouCPF.setText(String.valueOf(response.getEntity().getEntityTaxId()));			
+			cnpjOucpf.setText(String.valueOf(response.getEntity().getEntityTaxId()));			
+		}
+		
+		if(!String.valueOf(response.getAmountTotalExposure()).equals("")){
+			pedidoAberto.setText(String.valueOf(response.getAmountTotalExposure()));			
 		}
 
 	}
