@@ -63,6 +63,8 @@
         android:layout_alignBottom="@+id/lbl_Credito"
         android:layout_alignLeft="@+id/txt_CNPJCPF"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:inputType="numberDecimal" />
 
     <TextView
@@ -91,6 +93,8 @@
         android:layout_alignBottom="@+id/lbl_PedidoAberto"
         android:layout_toRightOf="@+id/lbl_PedidoAberto"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:inputType="numberDecimal" />
 
 </RelativeLayout>
