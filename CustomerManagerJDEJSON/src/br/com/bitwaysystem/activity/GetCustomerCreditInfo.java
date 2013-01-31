@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 import br.com.bitwaysystem.service.RestMethods;
+import br.com.bitwaysystem.util.FormatCNPJorCPF;
+
 import com.example.customermanagerjdejson.R;
 
 public class GetCustomerCreditInfo extends Activity implements
@@ -62,7 +64,18 @@ public class GetCustomerCreditInfo extends Activity implements
 		limiteDeCredito.setText(String.valueOf(response.getAmountCreditLimit()));
 		
 		if(!String.valueOf(response.getEntity().getEntityTaxId()).equals("")){
-			cnpjOucpf.setText(String.valueOf(response.getEntity().getEntityTaxId()));			
+			
+			String cnpjOucpfformat;
+			
+			if(String.valueOf(response.getEntity().getEntityTaxId()).length() == 11){
+				cnpjOucpfformat = FormatCNPJorCPF.formatarCpf(String.valueOf(response.getEntity().getEntityTaxId()));
+			}
+			else
+			{
+			    cnpjOucpfformat = FormatCNPJorCPF.formatarCnpj(String.valueOf(response.getEntity().getEntityTaxId()));
+			}
+			
+			cnpjOucpf.setText(cnpjOucpfformat);			
 		}
 		
 		if(!String.valueOf(response.getAmountTotalExposure()).equals("")){
