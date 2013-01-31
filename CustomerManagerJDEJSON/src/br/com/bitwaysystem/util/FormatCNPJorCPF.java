@@ -42,7 +42,7 @@ public class FormatCNPJorCPF {
     }
     
     public static void main(String[] args1) {
-    	System.out.println(FormatCNPJorCPF.formatarCpf("27722700845"));
+    	System.out.println(FormatCNPJorCPF.formatarCpf("23344599856"));
     	System.out.println(FormatCNPJorCPF.formatarCnpj("104672210001-08"));
     	
     }
