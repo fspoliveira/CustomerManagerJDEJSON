@@ -63,10 +63,7 @@ public class GetCustomerCreditInfo extends Activity implements
 		// TODO Auto-generated method stub
 		
 		TextView idCliente = (TextView) findViewById(R.id.txt_idCliente);
-		GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();
-		
-		Log.w("o que ta vindo do Id cliente", idCliente.getText().toString());
-		
+		GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();		
 		task.execute(idCliente.getText().toString());	
 	}
 	
@@ -123,7 +120,11 @@ public class GetCustomerCreditInfo extends Activity implements
             {
             	TextView limiteDeCredito = (TextView) findViewById(R.id.txt_Limite);
         		TextView cnpjOucpf = (TextView) findViewById(R.id.txt_CNPJCPF);
-        		TextView pedidoAberto = (TextView) findViewById(R.id.txt_PedidoAberto);        		
+        		TextView pedidoAberto = (TextView) findViewById(R.id.txt_PedidoAberto); 
+        		
+        		limiteDeCredito.setText("");
+        		cnpjOucpf.setText("");
+        		pedidoAberto.setText("");
             	
             	limiteDeCredito.setText(String.valueOf(result.getAmountCreditLimit()));
         		
