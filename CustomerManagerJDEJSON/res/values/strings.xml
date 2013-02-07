@@ -8,4 +8,5 @@
     <string name="consulta_btn">Consultar</string>
     <string name="pedidoAberto">Pedido Aberto:</string>
      <string name="msgFooter">Oracle JDEdwards</string>
+      <string name="sair">Sair</string>
 </resources>
