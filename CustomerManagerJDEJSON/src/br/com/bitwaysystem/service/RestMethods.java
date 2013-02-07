@@ -9,6 +9,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
+
+import android.util.Log;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 import br.com.bitwaysystem.json.JSONtoJava;
 
@@ -41,10 +43,13 @@ public class RestMethods {
 		try {
 			HttpResponse response = httpClient.execute(httpGet, localContext);
 			HttpEntity entity = response.getEntity();
-			text = getASCIIContentFromEntity(entity);
+			text = getASCIIContentFromEntity(entity);				
+			
 		} catch (Exception e) {
 			e.getLocalizedMessage();
 		}
+		
+		Log.w("O que chegou no retorno do response", text);
 		
 		ShowCustomerCreditInformation showCreditInfo = JSONtoJava.showCredit(text);
 		return showCreditInfo;

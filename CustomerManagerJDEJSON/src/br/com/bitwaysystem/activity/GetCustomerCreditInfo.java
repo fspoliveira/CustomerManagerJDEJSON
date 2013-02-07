@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,6 +21,22 @@ import com.example.customermanagerjdejson.R;
 public class GetCustomerCreditInfo extends Activity implements
 		View.OnClickListener {
 	
+	protected static final int SAIR = 1;
+	
+	@Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item)
+    {
+        super.onMenuItemSelected(featureId, item);
+        
+        switch(item.getItemId())
+        {           
+           
+            case SAIR:
+                finish();
+        }
+        return false;
+    }
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,6 +45,8 @@ public class GetCustomerCreditInfo extends Activity implements
 		Button ok = (Button) findViewById(R.id.button1);
 		ok.setOnClickListener(this);
 	}
+	
+	
 	
 	 /**
      * Called by the framework when whenever the Activity needs to provide
@@ -55,6 +74,7 @@ public class GetCustomerCreditInfo extends Activity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
+		menu.add(0, SAIR, 0, "Sair");
 		return true;
 	}
 	
