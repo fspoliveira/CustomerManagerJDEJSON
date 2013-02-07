@@ -39,11 +39,11 @@ public class GetCustomerCreditInfo extends Activity implements
     {
         if (id == DIALOG_PROGRESS)
         {            
-            String message = getString(R.string.consulta_btn);
+            //String message = getString(R.string.consulta_btn);        	
             ProgressDialog dialog = new ProgressDialog(this);
             dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            dialog.setMessage(message);
-            dialog.setCancelable(false);
+            dialog.setMessage("Consultando");
+            dialog.setCancelable(false);            
             return dialog;
         }
         else
