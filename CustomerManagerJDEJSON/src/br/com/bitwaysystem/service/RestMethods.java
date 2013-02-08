@@ -43,7 +43,16 @@ public class RestMethods {
 		try {
 			HttpResponse response = httpClient.execute(httpGet, localContext);
 			HttpEntity entity = response.getEntity();
-			text = getASCIIContentFromEntity(entity);				
+			
+			 if (entity != null) {
+			
+			text = getASCIIContentFromEntity(entity);	
+			 }
+			 else{
+				 
+				 Log.w("Chegou nULL DO RESPONSE", text);
+				 
+			 }
 			
 		} catch (Exception e) {
 			e.getLocalizedMessage();

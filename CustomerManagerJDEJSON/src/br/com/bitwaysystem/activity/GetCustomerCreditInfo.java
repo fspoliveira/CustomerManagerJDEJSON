@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 import br.com.bitwaysystem.service.RestMethods;
+import br.com.bitwaysystem.util.Connection;
 import br.com.bitwaysystem.util.FormatCNPJorCPF;
 import com.example.customermanagerjdejson.R;
 
@@ -75,10 +76,14 @@ public class GetCustomerCreditInfo extends Activity implements
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-
-		TextView idCliente = (TextView) findViewById(R.id.txt_idCliente);
-		GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();
-		task.execute(idCliente.getText().toString());
+		 
+		if(Connection.conectado(getBaseContext())){
+			TextView idCliente = (TextView) findViewById(R.id.txt_idCliente);
+			GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();
+			task.execute(idCliente.getText().toString());
+		}
+		
+		
 	}
 
 	/**
