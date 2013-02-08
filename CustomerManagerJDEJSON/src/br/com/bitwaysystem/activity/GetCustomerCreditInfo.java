@@ -76,14 +76,17 @@ public class GetCustomerCreditInfo extends Activity implements
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		 
-		if(Connection.conectado(getBaseContext())){
+
+		if (Connection.conectado(getBaseContext())) {
 			TextView idCliente = (TextView) findViewById(R.id.txt_idCliente);
 			GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();
 			task.execute(idCliente.getText().toString());
+		} else {
+
+			Toast.makeText(getApplicationContext(),
+					"Erro: sem conexão com a Internet", Toast.LENGTH_SHORT).show();
 		}
-		
-		
+
 	}
 
 	/**
