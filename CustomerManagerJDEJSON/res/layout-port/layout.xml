@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lbl_idCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/txtCliente" />
+
+    <EditText
+        android:id="@+id/txt_idCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lbl_idCliente"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/lbl_CNPJ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lbl_idCliente"
+        android:layout_marginTop="32dp"
+        android:text="@string/txtCNPJCPF" />
+
+    <EditText
+        android:id="@+id/txt_CNPJCPF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lbl_CNPJ"
+        android:layout_alignBottom="@+id/lbl_CNPJ"
+        android:layout_alignLeft="@+id/txt_idCliente"
+        android:ems="10"
+        android:inputType="number" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/lbl_Credito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txt_CNPJCPF"
+        android:layout_marginTop="31dp"
+        android:text="@string/limiteCredito" />
+
+    <EditText
+        android:id="@+id/txt_Limite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lbl_Credito"
+        android:layout_alignBottom="@+id/lbl_Credito"
+        android:layout_alignLeft="@+id/txt_CNPJCPF"
+        android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lbl_PedidoAberto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txt_Limite"
+        android:layout_marginTop="27dp"
+        android:text="@string/pedidoAberto" />
+
+    <EditText
+        android:id="@+id/txt_PedidoAberto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lbl_PedidoAberto"
+        android:layout_alignBottom="@+id/lbl_PedidoAberto"
+        android:layout_toRightOf="@+id/lbl_PedidoAberto"
+        android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal" />
+    
+    <LinearLayout android:layout_width="fill_parent"
+    android:layout_alignParentBottom="true" android:gravity="center_vertical"
+    android:background="@color/black" android:layout_height="wrap_content"
+    android:id="@+id/rodape" android:padding="10dip">
+
+    <TextView
+        android:id="@+id/texto2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/msgFooter"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rodape"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="@string/consulta_btn" />
+
+</RelativeLayout>

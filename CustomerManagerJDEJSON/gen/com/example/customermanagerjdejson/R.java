@@ -20,20 +20,19 @@ public final class R {
     public static final class id {
         public static final int button1=0x7f08000a;
         public static final int iSair=0x7f08000b;
-        public static final int lbl_CNPJ=0x7f080002;
+        public static final int lbl_CNPJ=0x7f080003;
         public static final int lbl_Credito=0x7f080004;
         public static final int lbl_PedidoAberto=0x7f080006;
         public static final int lbl_idCliente=0x7f080000;
-        public static final int rodape=0x7f080008;
-        public static final int texto2=0x7f080009;
-        public static final int txt_CNPJCPF=0x7f080003;
+        public static final int rodape=0x7f080007;
+        public static final int texto2=0x7f080008;
+        public static final int txt_CNPJCPF=0x7f080002;
         public static final int txt_Limite=0x7f080005;
-        public static final int txt_PedidoAberto=0x7f080007;
+        public static final int txt_PedidoAberto=0x7f080009;
         public static final int txt_idCliente=0x7f080001;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int layout=0x7f030001;
+        public static final int layout=0x7f030000;
     }
     public static final class menu {
         public static final int down_menu=0x7f070000;
