@@ -42,7 +42,7 @@ public class GetCustomerCreditInfo extends Activity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.layout);
 
 		Button ok = (Button) findViewById(R.id.button1);
 		ok.setOnClickListener(this);
