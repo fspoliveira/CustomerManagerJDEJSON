@@ -1,6 +1,7 @@
 package br.com.bitwaysystem.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import br.com.bitwaysystem.bean.Entity;
@@ -21,6 +22,9 @@ import com.example.customermanagerjdejson.R;
 
 public class GetCustomerCreditInfo extends Activity implements
 		View.OnClickListener {
+
+	// ! ID of the progress dialog.
+	private final int DIALOG_PROGRESS = 1;
 
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -79,12 +83,18 @@ public class GetCustomerCreditInfo extends Activity implements
 
 		if (Connection.conectado(getBaseContext())) {
 			TextView idCliente = (TextView) findViewById(R.id.txt_idCliente);
-			GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();
-			task.execute(idCliente.getText().toString());
+
+			if (idCliente.getText().toString().equals("")) {
+				this.camposObrigatorios("Id Cliente é obrigatório");
+			} else {
+				GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();
+				task.execute(idCliente.getText().toString());
+			}
+
 		} else {
 
 			Toast.makeText(getApplicationContext(),
-					"Erro: sem conexão com a Internet", Toast.LENGTH_SHORT).show();
+					"Sem conexão com a Internet", Toast.LENGTH_SHORT).show();
 		}
 
 	}
@@ -167,6 +177,10 @@ public class GetCustomerCreditInfo extends Activity implements
 					pedidoAberto.setText(String.valueOf(result
 							.getAmountTotalExposure()));
 				}
+			} else {
+				Toast.makeText(getApplicationContext(),
+						"Falha de conexão com o servidor", Toast.LENGTH_SHORT)
+						.show();
 			}
 		}
 
@@ -195,7 +209,12 @@ public class GetCustomerCreditInfo extends Activity implements
 		private String m_error = null;
 	}
 
-	// ! ID of the progress dialog.
-	private final int DIALOG_PROGRESS = 1;
+	public void camposObrigatorios(String mensagem) {
+		AlertDialog.Builder m = new AlertDialog.Builder(this);
+		m.setTitle("Aviso");
+		m.setMessage(mensagem);
+		m.setPositiveButton("OK", null);
+		m.show();
+	}
 
 }

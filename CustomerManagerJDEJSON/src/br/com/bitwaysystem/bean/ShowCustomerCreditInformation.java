@@ -1,13 +1,13 @@
 package br.com.bitwaysystem.bean;
 
 public class ShowCustomerCreditInformation {
-	
+
 	private double amountCreditLimit;
 	private Double amountTotalExposure;
 	private boolean creditHoldExempt;
 	private String[] e1MessageList;
 	private Entity entity;
-	
+
 	public ShowCustomerCreditInformation() {
 		super();
 	}
@@ -16,6 +16,7 @@ public class ShowCustomerCreditInformation {
 		super();
 		this.entity = entity;
 	}
+
 	public ShowCustomerCreditInformation(double amountCreditLimit,
 			Double amountTotalExposure, boolean creditHoldExempt,
 			String[] e1MessageList, Entity entity) {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JDE - Crédito Cliente</string>    
+    <string name="app_name">JDE - Crédito Cliente</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">JDE - Crédito Cliente</string>
     <string name="txtCliente">ID Cliente:</string>
@@ -7,6 +7,6 @@
     <string name="limiteCredito">Crédito:</string>
     <string name="consulta_btn">Consultar</string>
     <string name="pedidoAberto">Pedido Aberto:</string>
-     <string name="msgFooter">Oracle JDEdwards</string>
-      <string name="sair">Sair</string>
+    <string name="msgFooter">Oracle JDEdwards</string>
+    <string name="sair">Sair</string>
 </resources>

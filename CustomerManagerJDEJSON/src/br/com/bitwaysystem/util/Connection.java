@@ -15,7 +15,7 @@ public class Connection {
             String LogSync = null;
             String LogToUserTitle = null;
             if (cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnected()) {
-                    LogSync += "\nConectado a Internet 3G ";
+				LogSync += "\nConectado a Internet 3G ";
                     LogToUserTitle += "Conectado a Internet 3G ";
                     //handler.sendEmptyMessage(0);
                     Log.d(TAG,"Status de conexão 3G: "+cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnected());
