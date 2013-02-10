@@ -72,7 +72,10 @@
         android:layout_above="@+id/txt_CNPJCPF"
         android:layout_alignLeft="@+id/txt_CNPJCPF"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
 
     <EditText
         android:id="@+id/txt_Limite"
@@ -81,9 +84,9 @@
         android:layout_alignBottom="@+id/TextView02"
         android:layout_alignLeft="@+id/txt_CNPJCPF"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:inputType="number" >
-
-        <requestFocus />
     </EditText>
 
     <EditText
@@ -93,6 +96,8 @@
         android:layout_alignLeft="@+id/txt_Limite"
         android:layout_below="@+id/txt_Limite"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:inputType="numberDecimal" />
 
     <TextView

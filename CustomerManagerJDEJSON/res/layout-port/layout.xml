@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="40dp"
         android:text="@string/txtCliente" />
-
+      
     <EditText
         android:id="@+id/txt_idCliente"
         android:layout_width="wrap_content"
@@ -20,9 +20,8 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="23dp"
         android:ems="10"
-        android:inputType="number" >
-
-        <requestFocus />
+        android:inputType="number" > 
+         <requestFocus/>    
     </EditText>
 
     <TextView
@@ -98,7 +97,9 @@
         android:layout_alignBottom="@+id/lbl_Credito"
         android:layout_alignLeft="@+id/txt_CNPJCPF"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <EditText
         android:id="@+id/txt_PedidoAberto"
@@ -107,6 +108,8 @@
         android:layout_alignBottom="@+id/lbl_PedidoAberto"
         android:layout_toRightOf="@+id/lbl_PedidoAberto"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal" 
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
 
 </RelativeLayout>
