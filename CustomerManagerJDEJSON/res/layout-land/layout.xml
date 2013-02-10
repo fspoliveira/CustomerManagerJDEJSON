@@ -73,8 +73,7 @@
         android:layout_alignLeft="@+id/txt_CNPJCPF"
         android:ems="10"
         android:inputType="number" >
-
-        <requestFocus />
+         <requestFocus />
     </EditText>
 
     <EditText

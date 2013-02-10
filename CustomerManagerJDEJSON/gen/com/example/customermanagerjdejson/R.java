@@ -37,6 +37,7 @@ public final class R {
     }
     public static final class layout {
         public static final int layout=0x7f030000;
+        public static final int splash=0x7f030001;
     }
     public static final class menu {
         public static final int down_menu=0x7f070000;
