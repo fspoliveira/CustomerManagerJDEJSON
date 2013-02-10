@@ -30,26 +30,6 @@
         android:text="@string/consulta_btn" />
 
     <TextView
-        android:id="@+id/TextView03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_alignParentLeft="true"
-        android:text="@string/pedidoAberto" />
-
-    <EditText
-        android:id="@+id/txt_PedidoAberto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/TextView03"
-        android:layout_alignRight="@+id/button1"
-        android:ems="10"
-        android:inputType="number" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,27 +51,17 @@
         android:id="@+id/TextView02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/txt_PedidoAberto"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="14dp"
+        android:layout_below="@+id/TextView01"
+        android:layout_marginTop="14dp"
         android:text="@string/limiteCredito" />
-
-    <EditText
-        android:id="@+id/txt_Limite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView02"
-        android:layout_alignBottom="@+id/TextView02"
-        android:layout_alignLeft="@+id/txt_PedidoAberto"
-        android:ems="10"
-        android:inputType="number" />
 
     <EditText
         android:id="@+id/txt_CNPJCPF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/TextView01"
-        android:layout_alignLeft="@+id/txt_Limite"
+        android:layout_above="@+id/TextView02"
+        android:layout_alignRight="@+id/button1"
         android:ems="10"
         android:inputType="number" />
 
@@ -99,9 +69,38 @@
         android:id="@+id/txt_idCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_above="@+id/txt_CNPJCPF"
         android:layout_alignLeft="@+id/txt_CNPJCPF"
         android:ems="10"
         android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txt_Limite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView02"
+        android:layout_alignLeft="@+id/txt_CNPJCPF"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txt_PedidoAberto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_Limite"
+        android:layout_below="@+id/txt_Limite"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txt_PedidoAberto"
+        android:layout_alignParentLeft="true"
+        android:text="@string/pedidoAberto" />
 
 </RelativeLayout>
