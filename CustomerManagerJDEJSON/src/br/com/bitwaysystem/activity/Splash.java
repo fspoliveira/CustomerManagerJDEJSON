@@ -23,7 +23,7 @@ public class Splash extends Activity implements Runnable {
 			setContentView(R.layout.splash);
 
 			Handler handler = new Handler();
-			handler.postDelayed(this, 3000);
+			handler.postDelayed(this, 1000);
 		}
 
 		public void run(){
