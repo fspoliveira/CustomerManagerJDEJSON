@@ -1,6 +1,8 @@
 package br.com.bitwaysystem.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,7 +13,24 @@ import com.example.customermanagerjdejson.R;
 
 public class Splash extends Activity implements Runnable {
 
-		public void onCreate(Bundle savedInstanceState) {
+	// ! ID of the progress dialog.
+	private final int DIALOG_PROGRESS = 1;
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		if (id == DIALOG_PROGRESS) {
+			// String message = getString(R.string.consulta_btn);
+			ProgressDialog dialog = new ProgressDialog(this);
+			dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);	
+			dialog.setMessage("Carregando");
+			dialog.setCancelable(false);
+			return dialog;
+		} else {
+			return null;
+		}
+	}	
+	
+	public void onCreate(Bundle savedInstanceState) {
 			
 			//Remove title bar
 			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -19,11 +38,13 @@ public class Splash extends Activity implements Runnable {
 			//Remove notification bar
 			this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 			
+			showDialog(DIALOG_PROGRESS);
+			
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.splash);
 
 			Handler handler = new Handler();
-			handler.postDelayed(this, 1000);
+			handler.postDelayed(this, 2000);
 		}
 
 		public void run(){
