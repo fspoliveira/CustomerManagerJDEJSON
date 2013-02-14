@@ -31,7 +31,7 @@ public class GetCustomerCreditInfo extends Activity implements
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// sua implementação.
+			
 			this.onBackPressed();
 			return true;
 		}
@@ -42,7 +42,7 @@ public class GetCustomerCreditInfo extends Activity implements
 	public void onBackPressed() {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle("Mensagem");
-
+		
 		alertDialogBuilder
 				.setMessage("Deseja realmente sair?")
 				.setCancelable(false)

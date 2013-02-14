@@ -21,7 +21,7 @@ public class Splash extends Activity implements Runnable {
 		if (id == DIALOG_PROGRESS) {
 			// String message = getString(R.string.consulta_btn);
 			ProgressDialog dialog = new ProgressDialog(this);
-			dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);	
+			dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);			
 			dialog.setMessage("Carregando");
 			dialog.setCancelable(false);
 			return dialog;
