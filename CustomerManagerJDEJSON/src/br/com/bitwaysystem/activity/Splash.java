@@ -29,6 +29,7 @@ public class Splash extends Activity implements Runnable {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	public void onCreate(Bundle savedInstanceState) {
 
 		// Remove title bar

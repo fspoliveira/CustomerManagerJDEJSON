@@ -2,8 +2,6 @@ package br.com.bitwaysystem.json;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import android.util.Log;
 import br.com.bitwaysystem.bean.Entity;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 
@@ -16,25 +14,23 @@ public class JSONtoJava {
 				0.0, 0.0, true, "", entity, "");
 
 		try {
-			
+
 			JSONObject userObject = new JSONObject(strJson);
 
 			/* Tratamento de erro */
-			String xmlFragment = null;	
-		    String helloResponse = null;		    
+			String xmlFragment = null;
+			String helloResponse = null;
 
 			if (userObject.has("xml-fragment")) {
 
 				xmlFragment = userObject.getString("xml-fragment");
-				
-				JSONObject userObject1 = new JSONObject(
-						xmlFragment);
-				
+
+				JSONObject userObject1 = new JSONObject(xmlFragment);
+
 				helloResponse = userObject1.getString("ns0:errorHandler");
-				
-				JSONObject userObject2 = new JSONObject(
-						helloResponse);
-				
+
+				JSONObject userObject2 = new JSONObject(helloResponse);
+
 				customer.setErrorCodeBea(userObject2.getString("errorCode"));
 
 			} else {

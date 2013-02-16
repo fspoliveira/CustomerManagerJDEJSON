@@ -39,6 +39,7 @@ public class GetCustomerCreditInfo extends Activity implements
 		return super.onKeyDown(keyCode, event);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onBackPressed() {
 		showDialog(DIALOG_EXIT);
