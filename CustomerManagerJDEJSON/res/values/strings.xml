@@ -9,4 +9,6 @@
     <string name="pedidoAberto">Pedido Aberto:</string>
     <string name="msgFooter">Oracle JDEdwards</string>
     <string name="sair">Sair</string>
+    <string name="txtHeader">Contas a Receber</string>
+    <string name="OK">OK</string>
 </resources>
