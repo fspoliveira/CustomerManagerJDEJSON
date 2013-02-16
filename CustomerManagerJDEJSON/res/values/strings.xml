@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Crédito Cliente</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">JDE - Crédito Cliente</string>
+    <string name="title_activity_main">Contas a Receber</string>
     <string name="txtCliente">ID Cliente:</string>
     <string name="txtCNPJCPF">CNPJ/CPF:</string>
     <string name="limiteCredito">Crédito:</string>
@@ -9,7 +9,7 @@
     <string name="pedidoAberto">Pedido Aberto:</string>
     <string name="msgFooter">Oracle JDEdwards</string>
     <string name="sair">Sair</string>
-    <string name="txtHeader">Contas a Receber</string>
+    <string name="txtHeader">Crédito Cliente</string>
     <string name="OK">OK</string>
     <string name="desc">logo</string>
 </resources>
