@@ -27,11 +27,12 @@ public class GetCustomerCreditInfo extends Activity implements
 
 	// ! ID of the progress dialog.
 	private final int DIALOG_PROGRESS = 1;
+	private final int DIALOG_EXIT = 2;
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			
+
 			this.onBackPressed();
 			return true;
 		}
@@ -40,27 +41,8 @@ public class GetCustomerCreditInfo extends Activity implements
 
 	@Override
 	public void onBackPressed() {
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setTitle("Mensagem");
-		
-		alertDialogBuilder
-				.setMessage("Deseja realmente sair?")
-				.setCancelable(false)
-				.setPositiveButton("Sim",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								finish();
-							}
-						})
-				.setNegativeButton("Não",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						});
+		showDialog(DIALOG_EXIT);
 
-		AlertDialog alertDialog = alertDialogBuilder.create();
-		alertDialog.show();
 	}
 
 	@Override
@@ -100,8 +82,35 @@ public class GetCustomerCreditInfo extends Activity implements
 			dialog.setCancelable(false);
 			return dialog;
 		} else {
-			return null;
+			if (id == DIALOG_EXIT) {
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+						this);
+				alertDialogBuilder.setTitle("Mensagem");
+
+				alertDialogBuilder
+						.setMessage("Deseja realmente sair?")
+						.setCancelable(false)
+						.setPositiveButton("Sim",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int id) {
+										finish();
+									}
+								})
+						.setNegativeButton("Não",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int id) {
+										dialog.cancel();
+									}
+								});
+
+				AlertDialog alertDialog = alertDialogBuilder.create();
+				return alertDialog;
+			}
 		}
+		return null;
+
 	}
 
 	@Override
@@ -214,14 +223,14 @@ public class GetCustomerCreditInfo extends Activity implements
 					pedidoAberto.setText(String.valueOf(result
 							.getAmountTotalExposure()));
 				}
-				
-				if (String.valueOf(result.getErrorCodeBea()).equals("BEA-380001")) {
+
+				if (String.valueOf(result.getErrorCodeBea()).equals(
+						"BEA-380001")) {
 					Toast.makeText(getApplicationContext(),
-							"Id do cliente não existe no Cadastro Geral ", Toast.LENGTH_LONG)
-							.show();
+							"Id do cliente não existe no Cadastro Geral ",
+							Toast.LENGTH_LONG).show();
 				}
-				
-				
+
 			} else {
 				Toast.makeText(getApplicationContext(),
 						"Falha de conexão com o servidor", Toast.LENGTH_SHORT)
