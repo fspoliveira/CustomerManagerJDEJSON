@@ -214,6 +214,14 @@ public class GetCustomerCreditInfo extends Activity implements
 					pedidoAberto.setText(String.valueOf(result
 							.getAmountTotalExposure()));
 				}
+				
+				if (!String.valueOf(result.getErrorCodeBea()).equals("BEA-380001")) {
+					Toast.makeText(getApplicationContext(),
+							"Id do cliente não existe no Cadastro Geral ", Toast.LENGTH_LONG)
+							.show();
+				}
+				
+				
 			} else {
 				Toast.makeText(getApplicationContext(),
 						"Falha de conexão com o servidor", Toast.LENGTH_SHORT)

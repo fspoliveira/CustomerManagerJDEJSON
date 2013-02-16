@@ -2,6 +2,8 @@ package br.com.bitwaysystem.json;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.util.Log;
 import br.com.bitwaysystem.bean.Entity;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 
@@ -9,31 +11,53 @@ public class JSONtoJava {
 
 	public static ShowCustomerCreditInformation showCredit(String strJson) {
 
-		ShowCustomerCreditInformation customer = new ShowCustomerCreditInformation();
+		Entity entity = new Entity("", "", 0);
+		ShowCustomerCreditInformation customer = new ShowCustomerCreditInformation(
+				0.0, 0.0, true, "", entity, "");
 
 		try {
+			
 			JSONObject userObject = new JSONObject(strJson);
-			Entity entity = new Entity();
 
-			String getCustomerCreditInformationResponse = userObject
-					.getString("getCustomerCreditInformationResponse");
+			/* Tratamento de erro */
+			String xmlFragment = null;	
+		    String helloResponse = null;		    
 
-			JSONObject userObject1 = new JSONObject(
-					getCustomerCreditInformationResponse);
+			if (userObject.has("xml-fragment")) {
 
-			customer.setAmountCreditLimit(userObject1
-					.getDouble("amountCreditLimit"));
+				xmlFragment = userObject.getString("xml-fragment");
+				
+				JSONObject userObject1 = new JSONObject(
+						xmlFragment);
+				
+				helloResponse = userObject1.getString("ns0:errorHandler");
+				
+				JSONObject userObject2 = new JSONObject(
+						helloResponse);
+				
+				customer.setErrorCodeBea(userObject2.getString("errorCode"));
 
-			customer.setAmountTotalExposure(userObject1
-					.getDouble("amountTotalExposure"));
+			} else {
+				String getCustomerCreditInformationResponse = userObject
+						.getString("getCustomerCreditInformationResponse");
 
-			JSONObject entityJSON = (JSONObject) userObject1.get("entity");
+				JSONObject userObject1 = new JSONObject(
+						getCustomerCreditInformationResponse);
 
-			/* Recupera CNPJ ou CPF */
+				customer.setAmountCreditLimit(userObject1
+						.getDouble("amountCreditLimit"));
 
-			entity.setEntityTaxId(entityJSON.getString("entityTaxId"));
+				customer.setAmountTotalExposure(userObject1
+						.getDouble("amountTotalExposure"));
 
-			customer.setEntity(entity);
+				JSONObject entityJSON = (JSONObject) userObject1.get("entity");
+
+				/* Recupera CNPJ ou CPF */
+
+				entity.setEntityTaxId(entityJSON.getString("entityTaxId"));
+
+				customer.setEntity(entity);
+			}
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block

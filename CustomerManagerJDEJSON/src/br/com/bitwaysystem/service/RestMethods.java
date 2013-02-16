@@ -54,9 +54,7 @@ public class RestMethods {
 		HttpGet httpGet = new HttpGet(uri);
 		String text = null;
 		try {
-			// HttpResponse response = httpClient.execute(httpGet,
-			// localContext);
-
+			
 			HttpResponse response = httpClient.execute(httpGet);
 			HttpEntity entity = response.getEntity();
 			text = getASCIIContentFromEntity(entity);
