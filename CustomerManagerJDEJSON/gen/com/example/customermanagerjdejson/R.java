@@ -49,6 +49,7 @@ public final class R {
         public static final int OK=0x7f05000b;
         public static final int app_name=0x7f050000;
         public static final int consulta_btn=0x7f050006;
+        public static final int desc=0x7f05000c;
         public static final int limiteCredito=0x7f050005;
         public static final int menu_settings=0x7f050001;
         public static final int msgFooter=0x7f050008;
