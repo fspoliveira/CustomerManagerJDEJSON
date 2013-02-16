@@ -56,7 +56,8 @@
         android:ems="10"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:typeface="monospace" />
 
     <TextView
         android:id="@+id/lbl_Credito"
@@ -72,11 +73,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/lbl_Credito"
-        android:layout_alignLeft="@+id/txt_PedidoAberto"
+        android:layout_alignRight="@+id/txt_CNPJCPF"
+        android:layout_toRightOf="@+id/lbl_CNPJ"
         android:ems="10"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:inputType="number" />
+        android:inputType="number"
+        android:typeface="monospace" />
 
     <TextView
         android:id="@+id/lbl_CNPJ"
@@ -91,9 +94,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/lbl_CNPJ"
-        android:layout_alignLeft="@+id/txt_Limite"
+        android:layout_alignRight="@+id/txt_PedidoAberto"
+        android:layout_toRightOf="@+id/lbl_CNPJ"
         android:ems="10"
-        android:inputType="number" />
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="number"
+        android:typeface="monospace" />
 
     <TextView
         android:id="@+id/lbl_idCliente"
@@ -101,6 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/txt_CNPJCPF"
         android:layout_alignParentLeft="true"
+        android:freezesText="false"
         android:text="@string/txtCliente" />
 
     <EditText
@@ -108,9 +116,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/txt_CNPJCPF"
-        android:layout_toRightOf="@+id/lbl_PedidoAberto"
+        android:layout_alignLeft="@+id/txt_CNPJCPF"
+        android:layout_alignRight="@+id/txt_CNPJCPF"
         android:ems="10"
-        android:inputType="number" >
+        android:inputType="number"
+        android:typeface="monospace" >
 
         <requestFocus />
     </EditText>
