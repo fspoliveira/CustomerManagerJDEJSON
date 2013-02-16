@@ -22,10 +22,10 @@ public final class R {
         public static final int TextView02=0x7f080005;
         public static final int button1=0x7f080002;
         public static final int iSair=0x7f08000f;
-        public static final int lbl_CNPJ=0x7f08000c;
-        public static final int lbl_Credito=0x7f08000d;
-        public static final int lbl_PedidoAberto=0x7f08000e;
-        public static final int lbl_idCliente=0x7f08000b;
+        public static final int lbl_CNPJ=0x7f08000d;
+        public static final int lbl_Credito=0x7f08000c;
+        public static final int lbl_PedidoAberto=0x7f08000b;
+        public static final int lbl_idCliente=0x7f08000e;
         public static final int rodape=0x7f080000;
         public static final int textView1=0x7f080003;
         public static final int textView2=0x7f08000a;
