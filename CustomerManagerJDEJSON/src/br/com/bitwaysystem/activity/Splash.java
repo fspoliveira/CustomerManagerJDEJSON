@@ -21,8 +21,10 @@ public class Splash extends Activity implements Runnable {
 		if (id == DIALOG_PROGRESS) {
 
 			ProgressDialog dialog = ProgressDialog.show(Splash.this,
-					"Bem vindo...", "Carregando, por favor aguarde...", false,
+					"", "Carregando", false,
 					false);
+			
+			
 			return dialog;
 		} else {
 			return null;
@@ -39,7 +41,7 @@ public class Splash extends Activity implements Runnable {
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-		showDialog(DIALOG_PROGRESS);
+		//showDialog(DIALOG_PROGRESS);
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
