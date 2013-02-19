@@ -228,7 +228,13 @@ public class GetCustomerCreditInfo extends Activity implements
 				if (String.valueOf(result.getErrorCodeBea()).equals(
 						"BEA-380001")) {
 					Toast.makeText(getApplicationContext(),
-							"Id do cliente não existe no Cadastro Geral ",
+							"Id do cliente não existe no Cadastro Geral",
+							Toast.LENGTH_LONG).show();
+					
+				}else if (String.valueOf(result.getErrorCodeBea()).equals(
+						"BEA-380002")) {
+					Toast.makeText(getApplicationContext(),
+							"Falha de conexão com o servidor",
 							Toast.LENGTH_LONG).show();
 				}
 

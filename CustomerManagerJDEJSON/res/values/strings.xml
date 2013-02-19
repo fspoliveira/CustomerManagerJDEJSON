@@ -12,4 +12,5 @@
     <string name="txtHeader">Crédito Cliente</string>
     <string name="OK">OK</string>
     <string name="desc">logo</string>
+    <string name="carregando">Carregando</string>
 </resources>

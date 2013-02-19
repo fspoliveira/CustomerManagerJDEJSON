@@ -22,8 +22,7 @@ public class Splash extends Activity implements Runnable {
 
 			ProgressDialog dialog = ProgressDialog.show(Splash.this,
 					"", "Carregando", false,
-					false);
-			
+					false);			
 			
 			return dialog;
 		} else {
@@ -31,7 +30,6 @@ public class Splash extends Activity implements Runnable {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	public void onCreate(Bundle savedInstanceState) {
 
 		// Remove title bar
