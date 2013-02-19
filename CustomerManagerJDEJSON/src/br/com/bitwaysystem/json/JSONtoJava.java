@@ -2,8 +2,6 @@ package br.com.bitwaysystem.json;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import android.util.Log;
 import br.com.bitwaysystem.bean.Entity;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 
