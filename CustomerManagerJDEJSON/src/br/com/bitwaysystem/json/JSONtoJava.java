@@ -19,17 +19,13 @@ public class JSONtoJava {
 			String xmlFragment = null;
 			String helloResponse = null;
 
-			/* Tratamento de erro */
+			/* Servidor SOA-SUITE (WebLogic fora do ar) */
 			if (userObject.has("xml-fragment")) {
 
 				xmlFragment = userObject.getString("xml-fragment");
-
 				JSONObject userObject1 = new JSONObject(xmlFragment);
-
-				helloResponse = userObject1.getString("ns0:errorHandler");
-
+				helloResponse = userObject1.getString("errorHandler");
 				JSONObject userObject2 = new JSONObject(helloResponse);
-
 				customer.setErrorCodeBea(userObject2.getString("errorCode"));
 
 				/* Retorno sem erro */
@@ -53,17 +49,12 @@ public class JSONtoJava {
 				entity.setEntityTaxId(entityJSON.getString("entityTaxId"));
 
 				customer.setEntity(entity);
-			} else if ((userObject.has("ns0:errorHandler"))) {
-
-				String errorHandler = userObject.getString("ns0:errorHandler");
-
-				JSONObject userObject1 = new JSONObject(errorHandler);
-
-				String content = userObject1.getString("errorCode");
-
-				JSONObject userObject2 = new JSONObject(content);
-
-				customer.setErrorCodeBea(userObject2.getString("content"));
+			} else if ((userObject.has("errorHandler"))) {
+				/*Servidor do JDE (Weblogic) fora do ar */
+				
+				String errorHandler = userObject.getString("errorHandler");				
+				JSONObject userObject1 = new JSONObject(errorHandler);					
+				customer.setErrorCodeBea(userObject1.getString("errorCode"));
 
 			}
 
