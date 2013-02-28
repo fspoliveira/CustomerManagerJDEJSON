@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import br.com.bitwaysystem.bean.Entity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -55,7 +56,12 @@ public class GetCustomerCreditInfo extends Activity implements
 		case R.id.iSair:
 			finish();
 			break;
+
+		case R.id.iEndpoint:
+			startActivity(new Intent(this, EndpointActivity.class));
+
 		}
+
 		return false;
 	}
 
@@ -230,8 +236,8 @@ public class GetCustomerCreditInfo extends Activity implements
 					Toast.makeText(getApplicationContext(),
 							"Id do cliente não existe no Cadastro Geral",
 							Toast.LENGTH_LONG).show();
-					
-				}else if (String.valueOf(result.getErrorCodeBea()).equals(
+
+				} else if (String.valueOf(result.getErrorCodeBea()).equals(
 						"BEA-380002")) {
 					Toast.makeText(getApplicationContext(),
 							"Falha de conexão com o servidor",

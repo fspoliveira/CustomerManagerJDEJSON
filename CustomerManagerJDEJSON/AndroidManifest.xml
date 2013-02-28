@@ -32,6 +32,15 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="br.com.bitwaysystem.activity.EndpointActivity"
+            android:label="@string/title_activity_main"
+            android:configChanges="orientation" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

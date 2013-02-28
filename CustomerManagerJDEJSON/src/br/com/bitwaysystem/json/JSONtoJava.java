@@ -19,17 +19,10 @@ public class JSONtoJava {
 			String xmlFragment = null;
 			String helloResponse = null;
 
-			/* Servidor SOA-SUITE (WebLogic fora do ar) */
-			if (userObject.has("xml-fragment")) {
+			/* Retorno sem erro */
 
-				xmlFragment = userObject.getString("xml-fragment");
-				JSONObject userObject1 = new JSONObject(xmlFragment);
-				helloResponse = userObject1.getString("errorHandler");
-				JSONObject userObject2 = new JSONObject(helloResponse);
-				customer.setErrorCodeBea(userObject2.getString("errorCode"));
+			if ((userObject.has("getCustomerCreditInformationResponse"))) {
 
-				/* Retorno sem erro */
-			} else if ((userObject.has("getCustomerCreditInformationResponse"))) {
 				String getCustomerCreditInformationResponse = userObject
 						.getString("getCustomerCreditInformationResponse");
 
@@ -44,16 +37,29 @@ public class JSONtoJava {
 
 				JSONObject entityJSON = (JSONObject) userObject1.get("entity");
 
-				/* Recupera CNPJ ou CPF */
-
 				entity.setEntityTaxId(entityJSON.getString("entityTaxId"));
 
 				customer.setEntity(entity);
-			} else if ((userObject.has("errorHandler"))) {
-				/*Servidor do JDE (Weblogic) fora do ar */
-				
-				String errorHandler = userObject.getString("errorHandler");				
-				JSONObject userObject1 = new JSONObject(errorHandler);					
+			}
+
+			else if (userObject.has("xml-fragment")) {
+
+				/* Servidor SOA-SUITE (WebLogic fora do ar) */
+
+				xmlFragment = userObject.getString("xml-fragment");
+				JSONObject userObject1 = new JSONObject(xmlFragment);
+				helloResponse = userObject1.getString("errorHandler");
+				JSONObject userObject2 = new JSONObject(helloResponse);
+				customer.setErrorCodeBea(userObject2.getString("errorCode"));
+
+			}
+
+			else if ((userObject.has("errorHandler"))) {
+
+				/* Servidor do JDE (Weblogic) fora do ar */
+
+				String errorHandler = userObject.getString("errorHandler");
+				JSONObject userObject1 = new JSONObject(errorHandler);
 				customer.setErrorCodeBea(userObject1.getString("errorCode"));
 
 			}
