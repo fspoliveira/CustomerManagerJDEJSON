@@ -17,4 +17,5 @@
     <string name="voltar">Voltar</string>
     <string name="creditoCliente">Crédito Cliente</string>
     <string name="url">URL</string>
+     <string name="URLDefautl">http://soa-suite.no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON</string>
 </resources>

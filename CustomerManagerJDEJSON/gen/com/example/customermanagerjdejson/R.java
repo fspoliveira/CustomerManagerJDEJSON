@@ -26,7 +26,6 @@ public final class R {
         public static final int TextView02=0x7f080009;
         public static final int button1=0x7f080008;
         public static final int cabecalho=0x7f080000;
-        public static final int editText1=0x7f080006;
         public static final int iEndpoint=0x7f080015;
         public static final int iSair=0x7f080016;
         public static final int lbl_CNPJ=0x7f080011;
@@ -38,6 +37,7 @@ public final class R {
         public static final int textView1=0x7f080007;
         public static final int textView2=0x7f08000e;
         public static final int texto2=0x7f080003;
+        public static final int txtURL=0x7f080006;
         public static final int txt_CNPJCPF=0x7f08000a;
         public static final int txt_Limite=0x7f08000c;
         public static final int txt_PedidoAberto=0x7f08000d;
@@ -54,6 +54,7 @@ public final class R {
     public static final class string {
         public static final int Endpoint=0x7f05000a;
         public static final int OK=0x7f05000c;
+        public static final int URLDefautl=0x7f050012;
         public static final int app_name=0x7f050000;
         public static final int carregando=0x7f05000e;
         public static final int consulta_btn=0x7f050006;
