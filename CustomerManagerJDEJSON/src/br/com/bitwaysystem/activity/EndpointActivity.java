@@ -41,15 +41,19 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 		switch (v.getId()) {
 
 		case R.id.ButtonOk:
+			
 			// ---get the SharedPreferences object---
 			prefs = getSharedPreferences(prefName, MODE_PRIVATE);
 			SharedPreferences.Editor editor = prefs.edit();
+			
 			// ---save the values in the EditText view to preferences---
 			/* Armazena a chave "url" e endpoint */
 			editor.putString(getString(R.string.url), editText.getText()
 					.toString());
 			// ---saves the values---
 			editor.commit();
+			
+			finish();
 
 			break;
 
