@@ -1,28 +1,41 @@
 package br.com.bitwaysystem.activity;
 
 import com.example.customermanagerjdejson.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class EndpointActivity extends Activity implements
-View.OnClickListener{
-	
+public class EndpointActivity extends Activity implements View.OnClickListener {
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.endpoint);
 
-		Button ok = (Button) findViewById(R.id.button1);
+		final Button ok = (Button) findViewById(R.id.ButtonOk);
 		ok.setOnClickListener(this);
+
+		final Button back = (Button) findViewById(R.id.ButtonBack);
+		back.setOnClickListener(this);
+
 	}
-	
+
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
+		switch (v.getId()) {
+
+		case R.id.ButtonOk:
+			finish();
+			break;
+
+		case R.id.ButtonBack:
+			finish();
+
+		}
+
 	}
 
 }

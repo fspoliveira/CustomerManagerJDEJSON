@@ -14,4 +14,7 @@
     <string name="OK">OK</string>
     <string name="desc">logo</string>
     <string name="carregando">Carregando</string>
+    <string name="voltar">Voltar</string>
+    <string name="creditoCliente">Crédito Cliente</string>
+    <string name="url">URL</string>
 </resources>

@@ -20,7 +20,7 @@ public class CustomerManagerDao {
 	}
 
 	// ---retrieves a particular contact---
-	public Cursor getContact(Endpoint endpoint) throws SQLException {
+	public Cursor getURL(Endpoint endpoint) throws SQLException {
 		Cursor mCursor = db.query(true, EndpointManager.DATABASE_NAME,
 				new String[] { EndpointManager.KEY_ROWID,
 						EndpointManager.KEY_URL }, EndpointManager.KEY_ROWID

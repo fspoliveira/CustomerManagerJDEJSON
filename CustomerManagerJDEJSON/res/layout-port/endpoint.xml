@@ -7,16 +7,17 @@
         android:id="@+id/cabecalho"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:background="#550000"
         android:orientation="horizontal"
         android:padding="10dip" >
 
         <TextView
-            android:id="@+id/texto1"
-            android:layout_width="wrap_content"
+            android:id="@+id/TextView01"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/txtHeader"
+            android:text="@string/creditoCliente"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
@@ -38,40 +39,8 @@
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/txt_PedidoAberto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:inputType="numberDecimal"
-        android:typeface="monospace" />
-
-    <EditText
-        android:id="@+id/txt_Limite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/txt_CNPJCPF"
-        android:ems="10"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:inputType="number"
-        android:typeface="monospace" />
-
-    <EditText
-        android:id="@+id/txt_CNPJCPF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/txt_PedidoAberto"
-        android:ems="10"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:inputType="number"
-        android:typeface="monospace" />
-
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/ButtonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/cabecalho"
@@ -79,5 +48,34 @@
         android:layout_alignParentTop="true"
         android:text="@string/OK"
         android:textColor="#FFFAFA" />
+
+    <Button
+        android:id="@+id/ButtonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cabecalho"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:text="@string/voltar"
+        android:textColor="#FFFAFA" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cabecalho"
+        android:layout_marginTop="33dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10"
+        android:inputType="textUri" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignParentLeft="true"
+        android:text="@string/url" />
 
 </RelativeLayout>
