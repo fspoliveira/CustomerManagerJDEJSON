@@ -11,15 +11,12 @@ import android.widget.EditText;
 public class EndpointActivity extends Activity implements View.OnClickListener {
 
 	private SharedPreferences prefs;
-	private String prefName = "MyPref";
-	private static final String FONT_SIZE_KEY = "fontsize";
-	private static final String TEXT_VALUE_KEY = "textvalue";
+	private String prefName = "EndpointServer";
 	private EditText editText;
-
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.endpoint);
 
@@ -28,17 +25,13 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 
 		final Button back = (Button) findViewById(R.id.ButtonBack);
 		back.setOnClickListener(this);
-		
+
 		editText = (EditText) findViewById(R.id.txtURL);
 		
-	     SharedPreferences prefs = getSharedPreferences(prefName, MODE_PRIVATE);
-	     
-	     String urlDefault = getResources().getString(R.string.URLDefautl);
-	     
-	     String pontuacao = prefs.getString(getString(R.string.url), urlDefault);
-	     
-	     editText.setText(pontuacao.toString());
+        //Recupera URL do Shared Prefereces, se o arquivo não existe recupera do Default do arquivo String 
+		SharedPreferences prefs = getSharedPreferences(prefName, MODE_PRIVATE);	
 
+		editText.setText(prefs.getString(getString(R.string.url), getResources().getString(R.string.URLDefautl)));
 
 	}
 
@@ -48,13 +41,15 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 		switch (v.getId()) {
 
 		case R.id.ButtonOk:
-			 //---get the SharedPreferences object---
-            prefs = getSharedPreferences(prefName, MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefs.edit();
-            //---save the values in the EditText view to preferences---
-             editor.putString(getString(R.string.url), editText.getText().toString());
-            //---saves the values---
-            editor.commit();
+			// ---get the SharedPreferences object---
+			prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+			SharedPreferences.Editor editor = prefs.edit();
+			// ---save the values in the EditText view to preferences---
+			/* Armazena a chave "url" e endpoint */
+			editor.putString(getString(R.string.url), editText.getText()
+					.toString());
+			// ---saves the values---
+			editor.commit();
 
 			break;
 
