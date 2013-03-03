@@ -8,6 +8,7 @@ public class ShowCustomerCreditInformation {
 	private String e1MessageList;
 	private Entity entity;
 	private String errorCodeBea;
+	private String uri;
 
 	public String getErrorCodeBea() {
 		return errorCodeBea;
@@ -24,11 +25,11 @@ public class ShowCustomerCreditInformation {
 	public ShowCustomerCreditInformation(Entity entity) {
 		super();
 		this.entity = entity;
-	}		
+	}	
 
 	public ShowCustomerCreditInformation(double amountCreditLimit,
 			Double amountTotalExposure, boolean creditHoldExempt,
-			String e1MessageList, Entity entity, String errorCodeBea) {
+			String e1MessageList, Entity entity, String errorCodeBea, String uri) {
 		super();
 		this.amountCreditLimit = amountCreditLimit;
 		this.amountTotalExposure = amountTotalExposure;
@@ -36,6 +37,7 @@ public class ShowCustomerCreditInformation {
 		this.e1MessageList = e1MessageList;
 		this.entity = entity;
 		this.errorCodeBea = errorCodeBea;
+		this.uri = uri;
 	}
 
 	public String getE1MessageList() {
@@ -77,6 +79,16 @@ public class ShowCustomerCreditInformation {
 	public void setEntity(Entity entity) {
 		this.entity = entity;
 	}
+
+	public String getUri() {
+		return uri;
+	}
+
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+	
+	
 
 	
 }

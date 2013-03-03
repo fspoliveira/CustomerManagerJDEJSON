@@ -9,6 +9,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
+
+import android.util.Log;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 import br.com.bitwaysystem.json.JSONtoJava;
 
@@ -46,15 +48,23 @@ public class RestMethods {
 		int timeoutSocket = 6000;
 		HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
 
-		String uri = "http://soa-suite.no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON?id="
+		/*
+		 * String uri =
+		 * "http://soa-suite.no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON?id="
+		 * + showCustomerCI.getEntity().getEntityId();
+		 */
+
+		String uri = showCustomerCI.getUri() + "?id="
 				+ showCustomerCI.getEntity().getEntityId();
+		
+		Log.w("URI", uri);
 
 		DefaultHttpClient httpClient = new DefaultHttpClient(httpParameters);
 
 		HttpGet httpGet = new HttpGet(uri);
 		String text = null;
 		try {
-			
+
 			HttpResponse response = httpClient.execute(httpGet);
 			HttpEntity entity = response.getEntity();
 			text = getASCIIContentFromEntity(entity);

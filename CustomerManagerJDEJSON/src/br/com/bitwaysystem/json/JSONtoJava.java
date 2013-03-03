@@ -11,7 +11,7 @@ public class JSONtoJava {
 
 		Entity entity = new Entity("", "", 0);
 		ShowCustomerCreditInformation customer = new ShowCustomerCreditInformation(
-				0.0, 0.0, true, "", entity, "");
+				0.0, 0.0, true, "", entity, "", "");
 
 		try {
 
