@@ -29,7 +29,7 @@ public class GetCustomerCreditInfo extends Activity implements
 
 	// ! ID of the progress dialog.
 	private final int DIALOG_PROGRESS = 1;
-	private final int DIALOG_EXIT = 2;	
+	private final int DIALOG_EXIT = 2;
 	private String prefName = "EndpointServer";
 
 	@Override
@@ -69,13 +69,13 @@ public class GetCustomerCreditInfo extends Activity implements
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout);
 
 		Button ok = (Button) findViewById(R.id.button1);
 		ok.setOnClickListener(this);
-		
-		
+
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class GetCustomerCreditInfo extends Activity implements
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
+
 		if (Connection.conectado(getBaseContext())) {
 			TextView idCliente = (TextView) findViewById(R.id.txt_idCliente);
 
@@ -270,12 +270,13 @@ public class GetCustomerCreditInfo extends Activity implements
 
 			ShowCustomerCreditInformation customer = new ShowCustomerCreditInformation(
 					entity);
-			
-			//Recupera uri 
-			SharedPreferences prefs = getSharedPreferences(prefName, MODE_PRIVATE);
-			
+
+			// Recupera uri
+			SharedPreferences prefs = getSharedPreferences(prefName,
+					MODE_PRIVATE);
+
 			customer.setUri((prefs.getString(getString(R.string.url),
-					getResources().getString(R.string.URLDefautl)))); 
+					getResources().getString(R.string.URLDefautl))));
 
 			customer = RestMethods.showCredit(customer);
 
