@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:exported="false"
+            android:exported="false"           
             android:name="br.com.bitwaysystem.activity.GetCustomerCreditInfo"
             android:label="@string/title_activity_main"
             android:configChanges="orientation" android:screenOrientation="portrait">
