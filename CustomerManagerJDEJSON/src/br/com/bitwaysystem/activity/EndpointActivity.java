@@ -5,6 +5,7 @@ import br.com.bitwaysystem.util.Validates;
 import com.example.customermanagerjdejson.R;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 	private SharedPreferences prefs;
 	private String prefName = "EndpointServer";
 	private EditText editText;
+	private final int DIALOG_URL = 1;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -65,13 +68,9 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 				finish();
 
 			} else {
-				
+
 				/* Url inválida */
-				AlertDialog.Builder m = new AlertDialog.Builder(this);
-				m.setTitle("URL Inválida");
-				m.setMessage("Endereço do servidor inválido");
-				m.setPositiveButton("OK", null);
-				m.show();
+				showDialog(DIALOG_URL);
 
 			}
 
@@ -81,6 +80,22 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 			finish();
 
 		}
+
+	}
+
+	protected Dialog onCreateDialog(int id) {
+		if (id == DIALOG_URL) {
+
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+					this);
+			alertDialogBuilder.setTitle("URL Inválida");
+			alertDialogBuilder.setMessage("Endereço do servidor inválido");
+			alertDialogBuilder.setPositiveButton("OK", null);
+			AlertDialog alertDialog = alertDialogBuilder.create();
+			return alertDialog;
+
+		}
+		return null;
 
 	}
 
