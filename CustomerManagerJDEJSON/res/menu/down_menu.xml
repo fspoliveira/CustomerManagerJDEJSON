@@ -6,7 +6,7 @@
         android:alphabeticShortcut="w"
         android:numericShortcut="3"
         android:title="@string/Endpoint"
-        android:titleCondensed="@string/sair"/>
+        android:titleCondensed="@string/Endpoint"/>
     <item
         android:id="@+id/iSair"
         android:alphabeticShortcut="w"

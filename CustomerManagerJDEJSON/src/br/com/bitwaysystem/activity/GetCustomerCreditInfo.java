@@ -61,6 +61,7 @@ public class GetCustomerCreditInfo extends Activity implements
 
 		case R.id.iEndpoint:
 			startActivity(new Intent(this, EndpointActivity.class));
+			break;
 
 		}
 

@@ -42,6 +42,7 @@ public final class R {
         public static final int txt_Limite=0x7f08000c;
         public static final int txt_PedidoAberto=0x7f08000d;
         public static final int txt_idCliente=0x7f08000b;
+        public static final int urlDefault=0x7f080017;
     }
     public static final class layout {
         public static final int endpoint=0x7f030000;
@@ -50,6 +51,7 @@ public final class R {
     }
     public static final class menu {
         public static final int down_menu=0x7f070000;
+        public static final int endpoint_menu=0x7f070001;
     }
     public static final class string {
         public static final int Endpoint=0x7f05000a;
@@ -70,6 +72,7 @@ public final class R {
         public static final int txtCliente=0x7f050003;
         public static final int txtHeader=0x7f05000b;
         public static final int url=0x7f050011;
+        public static final int urlPadrao=0x7f050013;
         public static final int voltar=0x7f05000f;
     }
     public static final class style {

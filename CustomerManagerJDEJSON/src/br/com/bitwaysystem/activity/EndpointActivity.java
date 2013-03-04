@@ -8,6 +8,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +43,30 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 		editText.setText(prefs.getString(getString(R.string.url),
 				getResources().getString(R.string.URLDefautl)));
 
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blowUp = getMenuInflater();
+		blowUp.inflate(R.menu.endpoint_menu, menu);
+
+		return true;
+	}
+	
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		super.onMenuItemSelected(featureId, item);
+
+		switch (item.getItemId()) {
+
+		case R.id.urlDefault:
+			editText.setText(getResources().getString(R.string.URLDefautl));
+			break;
+		}
+
+		return false;
 	}
 
 	@SuppressWarnings("deprecation")

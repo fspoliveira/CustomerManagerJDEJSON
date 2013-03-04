@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Crédito Cliente</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Contas a Receber</string>
@@ -9,7 +10,7 @@
     <string name="pedidoAberto">Pedido Aberto:</string>
     <string name="msgFooter">Oracle JDEdwards</string>
     <string name="sair">Sair</string>
-     <string name="Endpoint">Conexão</string>
+    <string name="Endpoint">Conexão</string>
     <string name="txtHeader">Crédito Cliente</string>
     <string name="OK">OK</string>
     <string name="desc">logo</string>
@@ -17,5 +18,7 @@
     <string name="voltar">Voltar</string>
     <string name="creditoCliente">Crédito Cliente</string>
     <string name="url">URL</string>
-     <string name="URLDefautl">http://soa-suite.no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON</string>
+    <string name="URLDefautl">http://soa-suite.no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON</string>
+    <string name="urlPadrao">URL Padrão</string>
+
 </resources>
