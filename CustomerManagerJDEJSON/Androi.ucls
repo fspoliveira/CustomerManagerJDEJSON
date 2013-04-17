@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="br.com.bitwaysystem.activity.EndpointActivity" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/activity/EndpointActivity.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="3" y="9" width="238" height="241"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="br.com.bitwaysystem.activity.GetCustomerCreditInfo" 
+    project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/activity/GetCustomerCreditInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="282" y="-37" width="238" height="277"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.com.bitwaysystem.activity.GetCustomerCreditInfo.GetCustomerCreditInfoTask" 
+    project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/activity/GetCustomerCreditInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="282" y="280" width="306" height="169"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="br.com.bitwaysystem.bean.Endpoint" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/bean/Endpoint.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position x="25" y="261" width="173" height="187"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="br.com.bitwaysystem.bean.Entity" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/bean/Entity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position x="634" y="106" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="br.com.bitwaysystem.bean.ShowCustomerCreditInformation" 
+    project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/bean/ShowCustomerCreditInformation.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="985" y="197" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="br.com.bitwaysystem.activity.Splash" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/activity/Splash.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position x="109" y="542" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="br.com.bitwaysystem.service.RestMethods" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/service/RestMethods.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position x="402" y="525" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="br.com.bitwaysystem.util.Connection" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/util/Connection.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position x="713" y="525" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.com.bitwaysystem.util.FormatCNPJorCPF" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/util/FormatCNPJorCPF.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="920" y="547" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="br.com.bitwaysystem.util.Validates" project="CustomerManagerJDEJSON" 
+    file="/CustomerManagerJDEJSON/src/br/com/bitwaysystem/util/Validates.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position x="1105" y="542" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association id="12">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="13" name="entity"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="15">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
