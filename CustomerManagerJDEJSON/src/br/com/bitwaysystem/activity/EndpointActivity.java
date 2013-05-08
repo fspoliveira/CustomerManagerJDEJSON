@@ -1,7 +1,6 @@
 package br.com.bitwaysystem.activity;
 
 import br.com.bitwaysystem.util.Validates;
-
 import com.example.customermanagerjdejson.R;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,6 +13,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+/**
+ * EndpointActivity é a classe base para dar manutenção no Endpoint da Aplicação
+ * <p> A url cadastrada é validada para verificar se é uma URL válida
+ * <p> Também existe a possibilidade de configurar a URL padrão
+ * que é http://soa-suite.no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON
+ * @author      Fernando Santiago
+ * @version     %I%, %G%
+ * @since       1.0
+ * */
 
 public class EndpointActivity extends Activity implements View.OnClickListener {
 
@@ -89,6 +98,7 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 				/* Armazena a chave "url" e endpoint */
 				editor.putString(getString(R.string.url), editText.getText()
 						.toString());
+				
 				// ---saves the values---
 				editor.commit();
 
@@ -98,7 +108,6 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 
 				/* Url inválida */
 				showDialog(DIALOG_URL);
-
 			}
 
 			break;

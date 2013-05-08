@@ -8,8 +8,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
-
 import com.example.customermanagerjdejson.R;
+
+/**
+ * Splash é a lasse da tela de Apresentação do programa
+ * <p> A tela fica carregando durante 2 segundos * 
+ * @author      Fernando Santiago
+ * @version     %I%, %G%
+ * @since       1.0
+ * */
 
 public class Splash extends Activity implements Runnable {
 
@@ -37,9 +44,7 @@ public class Splash extends Activity implements Runnable {
 
 		// Remove notification bar
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-		//showDialog(DIALOG_PROGRESS);
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);		
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);

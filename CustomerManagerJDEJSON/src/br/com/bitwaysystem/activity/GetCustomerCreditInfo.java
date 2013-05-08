@@ -24,6 +24,15 @@ import br.com.bitwaysystem.util.Connection;
 import br.com.bitwaysystem.util.FormatCNPJorCPF;
 import com.example.customermanagerjdejson.R;
 
+/**
+ * GetCustomerCreditInfo é a classe base principal da aplicação responsável
+ * por fazer a conexão com o servidor Oracle Service Bus e consumir o web
+ * service no formato REST/JSON N
+ * @author      Fernando Santiago
+ * @version     %I%, %G%
+ * @since       1.0
+ * */
+
 public class GetCustomerCreditInfo extends Activity implements
 		View.OnClickListener {
 
