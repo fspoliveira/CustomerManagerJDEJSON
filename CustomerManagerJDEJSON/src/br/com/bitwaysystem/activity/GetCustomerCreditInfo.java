@@ -25,22 +25,32 @@ import br.com.bitwaysystem.util.FormatCNPJorCPF;
 import com.example.customermanagerjdejson.R;
 
 /**
- * GetCustomerCreditInfo é a classe base principal da aplicação responsável
- * por fazer a conexão com o servidor Oracle Service Bus e consumir o web
- * service no formato REST/JSON N
- * @author      Fernando Santiago
- * @version     %I%, %G%
- * @since       1.0
+ * GetCustomerCreditInfo é a classe base principal da aplicação responsável por
+ * fazer a conexão com o servidor Oracle Service Bus e consumir o web service no
+ * formato REST/JSON
+ * 
+ * @author Fernando Santiago
+ * @version %I%, %G%
+ * @since 1.0
  * */
 
 public class GetCustomerCreditInfo extends Activity implements
 		View.OnClickListener {
 
-	// ! ID of the progress dialog.
 	private final int DIALOG_PROGRESS = 1;
 	private final int DIALOG_EXIT = 2;
 	private String prefName = "EndpointServer";
 
+	/**
+	 * Botao do celular pressionado
+	 * 
+	 * @param keyCode
+	 * @param event
+	 * @return true se o botao voltar foi pressionado
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
@@ -51,32 +61,57 @@ public class GetCustomerCreditInfo extends Activity implements
 		return super.onKeyDown(keyCode, event);
 	}
 
+	/**
+	 * Botao voltar do celular pressionado
+	 * 
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onBackPressed() {
 		showDialog(DIALOG_EXIT);
-
 	}
 
+	/**
+	 * Selecionar o Item do menu
+	 * 
+	 * @param featureId
+	 * @param item
+	 * @author Fernando Santiago
+	 * @return true caso o menu selecionado seja o URLDefault, senão retorna
+	 *         false
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		super.onMenuItemSelected(featureId, item);
 
 		switch (item.getItemId()) {
-
+		// Finaliza a aplicação
 		case R.id.iSair:
 			finish();
 			break;
 
+		// Efetua chamada da tela de configuração do Endpoint da Aplicação
 		case R.id.iEndpoint:
 			startActivity(new Intent(this, EndpointActivity.class));
 			break;
-
 		}
 
 		return false;
 	}
 
+	/**
+	 * Cria a intencao EndpointActivity baseada no layoyt layout
+	 * 
+	 * @param savedInstanceState
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -85,24 +120,30 @@ public class GetCustomerCreditInfo extends Activity implements
 
 		Button ok = (Button) findViewById(R.id.button1);
 		ok.setOnClickListener(this);
-
 	}
 
 	/**
-	 * Called by the framework when whenever the Activity needs to provide it
-	 * with a Dialog instance. The progress dialog is the only one provided by
-	 * this Activity.
+	 * Criação da Caixa de Diálogo
+	 * 
+	 * @param id
+	 * @return alertDialog
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
 	 */
 	@Override
 	protected Dialog onCreateDialog(int id) {
+		// Dialog progress que é invocada quando o web service está sendo
+		// consumindo
 		if (id == DIALOG_PROGRESS) {
-			// String message = getString(R.string.consulta_btn);
+
 			ProgressDialog dialog = new ProgressDialog(this);
 			dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 			dialog.setMessage("Consultando");
 			dialog.setCancelable(false);
 			return dialog;
 		} else {
+			// Caixa de diálogo que confirma saída do usuário
 			if (id == DIALOG_EXIT) {
 				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 						this);
@@ -131,9 +172,17 @@ public class GetCustomerCreditInfo extends Activity implements
 			}
 		}
 		return null;
-
 	}
 
+	/**
+	 * Método cria o menu Endpoint
+	 * 
+	 * @param menu
+	 * @return true
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -144,39 +193,49 @@ public class GetCustomerCreditInfo extends Activity implements
 		return true;
 	}
 
+	/**
+	 * Método clicar no botao ok
+	 * 
+	 * @param menu
+	 * @return true
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 
+		// Verifica se o cliente está conectado na WiFi ou 3G
 		if (Connection.conectado(getBaseContext())) {
 			TextView idCliente = (TextView) findViewById(R.id.txt_idCliente);
 
+			/** Id do cliente é obrigatório */
 			if (idCliente.getText().toString().equals("")) {
 				this.camposObrigatorios("Id Cliente é obrigatório");
 			} else {
+				// Invoca web service REST para consultar o limite de crédito
 				GetCustomerCreditInfoTask task = new GetCustomerCreditInfoTask();
 				task.execute(idCliente.getText().toString());
 			}
 
 		} else {
-
+			/** Sem conexão com a Internet */
 			Toast.makeText(getApplicationContext(),
 					"Sem conexão com a Internet", Toast.LENGTH_SHORT).show();
+
 		}
 
 	}
 
 	/**
-	 * The AsyncTask responsible for fetching the currency conversion rate. We
-	 * do this as an AsyncTask so we don't block the UI while the web service is
-	 * being called.
+	 * The AsyncTask é responsável por recuperar as informações de Crédito do
+	 * Cliente O processo é assíncrono para não bloquear a UI enquanto o web
+	 * service é chamado
 	 */
 	private class GetCustomerCreditInfoTask extends
 			AsyncTask<String, Void, ShowCustomerCreditInformation> {
 		/**
-		 * Runs on the UI thread before doInBackground(Params...). We take this
-		 * opportunity to clear out any previous result data and throw up our
-		 * progress dialog.
+		 * Executa a UI thread antes doInBackground(Params...).
 		 */
 		@SuppressWarnings("deprecation")
 		@Override
@@ -185,9 +244,7 @@ public class GetCustomerCreditInfo extends Activity implements
 		}
 
 		/**
-		 * Runs on the UI thread after cancel(boolean) is invoked and
-		 * doInBackground(Object[]) has finished. We simply dismiss the progress
-		 * dialog.
+		 * Esconde a caixa de diálogo
 		 */
 		@SuppressWarnings("deprecation")
 		@Override
@@ -196,9 +253,9 @@ public class GetCustomerCreditInfo extends Activity implements
 		}
 
 		/**
-		 * Runs on the UI thread after doInBackground(Params...) has completed.
-		 * This is where we dismiss the progress dialog and update the result
-		 * TextView.
+		 * Executa UI thread depois doInBackground(Params...) foi completado.
+		 * Esconde a caixa de diálogo "Consultando" e apresenta resultado nos
+		 * respectivos TextView.
 		 */
 		@SuppressWarnings("deprecation")
 		@Override
@@ -211,6 +268,7 @@ public class GetCustomerCreditInfo extends Activity implements
 				return;
 			}
 
+			/** Recupera objeto result e atribui aos campos da tela */
 			if (result != null) {
 				TextView limiteDeCredito = (TextView) findViewById(R.id.txt_Limite);
 				TextView cnpjOucpf = (TextView) findViewById(R.id.txt_CNPJCPF);
@@ -245,6 +303,7 @@ public class GetCustomerCreditInfo extends Activity implements
 							.getAmountTotalExposure()));
 				}
 
+				/** Tratamento de erro do SOA-SUITE */
 				if (String.valueOf(result.getErrorCodeBea()).equals(
 						"BEA-380001")) {
 					Toast.makeText(getApplicationContext(),
@@ -293,10 +352,18 @@ public class GetCustomerCreditInfo extends Activity implements
 			return customer;
 		}
 
-		// ! Error message
 		private String m_error = null;
 	}
 
+	/**
+	 * Metodo ao clicar no botao
+	 * 
+	 * @param mensagem
+	 *            - Mensagem de erro
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	public void camposObrigatorios(String mensagem) {
 		AlertDialog.Builder m = new AlertDialog.Builder(this);
 		m.setTitle("Aviso");
@@ -304,5 +371,4 @@ public class GetCustomerCreditInfo extends Activity implements
 		m.setPositiveButton("OK", null);
 		m.show();
 	}
-
 }

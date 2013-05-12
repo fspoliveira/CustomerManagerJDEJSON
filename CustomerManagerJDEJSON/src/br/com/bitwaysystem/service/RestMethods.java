@@ -12,8 +12,27 @@ import org.apache.http.params.HttpParams;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 import br.com.bitwaysystem.json.JSONtoJava;
 
+/**
+ * RestMethods é a classe Base que faz o consumo do Web Service REST/JSON do
+ * Oracle Service Bus
+ * 
+ * @author Fernando Santiago
+ * @version %I%, %G%
+ * @since 1.0
+ * */
 public class RestMethods {
 
+	/**
+	 * getASCIIContentFromEntity é que recebe a informação do protocolo HTTP e
+	 * transforma para String
+	 * 
+	 * @param entity
+	 *            - Objeto HTTP
+	 * @return String - String JSON
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 * */
 	protected static String getASCIIContentFromEntity(HttpEntity entity)
 			throws IllegalStateException, IOException {
 		InputStream in = entity.getContent();
@@ -28,6 +47,17 @@ public class RestMethods {
 		return out.toString();
 	}
 
+	/**
+	 * ShowCustomerCreditInformation efetua a conexão com servidor
+	 * 
+	 * @param ShowCustomerCreditInformation
+	 *            - id do cliente que está sendo consultado
+	 * @return ShowCustomerCreditInformation - Objeto com as informações do
+	 *         cliente que foram recuperadas do web service consumido
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 * */
 	public static ShowCustomerCreditInformation showCredit(
 			ShowCustomerCreditInformation showCustomerCI) {
 
@@ -35,17 +65,18 @@ public class RestMethods {
 
 		HttpParams httpParameters = new BasicHttpParams();
 
-		// Set the timeout in milliseconds until a connection is established.
-		// The default value is zero, that means the timeout is not used.
+		// Timeout até que a conexão seja estabelecida
+		// O valor padrão é Zero que indica que o timeout não foi usado
 		int timeoutConnection = 4000;
 		HttpConnectionParams.setConnectionTimeout(httpParameters,
 				timeoutConnection);
 
-		// Set the default socket timeout (SO_TIMEOUT)
-		// in milliseconds which is the timeout for waiting for data.
+		// Tempo padrão do socket (SO_TIMEOUT)
+		// Tempo em milisegndos para aguardar os dados
 		int timeoutSocket = 6000;
 		HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
 
+		// Monta a query String
 		String uri = showCustomerCI.getUri() + "?id="
 				+ showCustomerCI.getEntity().getEntityId();
 

@@ -1,5 +1,13 @@
 package br.com.bitwaysystem.bean;
 
+/**
+ * Entity é a classe Bean que armazena o idCliente, CPF/CNPJ e o endereço HTTP
+ * 
+ * @author Fernando Santiago
+ * @version %I%, %G%
+ * @since 1.0
+ * */
+
 public class Entity {
 
 	private String entityLongId;
@@ -45,5 +53,4 @@ public class Entity {
 	public void setEntityId(int entityId) {
 		this.entityId = entityId;
 	}
-
 }

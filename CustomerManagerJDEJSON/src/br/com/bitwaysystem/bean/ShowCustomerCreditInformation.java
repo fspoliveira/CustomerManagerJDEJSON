@@ -1,5 +1,15 @@
 package br.com.bitwaysystem.bean;
 
+/**
+ * ShowCustomerCreditInformation é a classe Bean que armazena as informações do
+ * cliente tais como: limite de crédito, O Total de pedidos em aberto, a
+ * mensagem de erro caso não seja possíve fazer a consulta (ou o servidor
+ * SOA-SUITE não está no ar ou o Web Logic do ERP JDE e o endereço HTTP
+ * 
+ * @author Fernando Santiago
+ * @version %I%, %G%
+ * @since 1.0
+ * */
 public class ShowCustomerCreditInformation {
 
 	private double amountCreditLimit;
@@ -25,7 +35,7 @@ public class ShowCustomerCreditInformation {
 	public ShowCustomerCreditInformation(Entity entity) {
 		super();
 		this.entity = entity;
-	}	
+	}
 
 	public ShowCustomerCreditInformation(double amountCreditLimit,
 			Double amountTotalExposure, boolean creditHoldExempt,
@@ -87,8 +97,4 @@ public class ShowCustomerCreditInformation {
 	public void setUri(String uri) {
 		this.uri = uri;
 	}
-	
-	
-
-	
 }

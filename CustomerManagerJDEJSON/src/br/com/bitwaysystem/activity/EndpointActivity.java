@@ -16,12 +16,16 @@ import android.widget.EditText;
 
 /**
  * EndpointActivity é a classe base para dar manutenção no Endpoint da Aplicação
- * <p> A url cadastrada é validada para verificar se é uma URL válida
- * <p> Também existe a possibilidade de configurar a URL padrão
- * que é http://soa-suite.no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON
- * @author      Fernando Santiago
- * @version     %I%, %G%
- * @since       1.0
+ * <p>
+ * A url cadastrada é validada para verificar se é uma URL válida
+ * <p>
+ * Também existe a possibilidade de configurar a URL padrão que é
+ * http://soa-suite
+ * .no-ip.org:7001/exposing-restful-service/CustomerManagerServiceJSON
+ * 
+ * @author Fernando Santiago
+ * @version %I%, %G%
+ * @since 1.0
  * */
 
 public class EndpointActivity extends Activity implements View.OnClickListener {
@@ -31,6 +35,14 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 	private EditText editText;
 	private final int DIALOG_URL = 1;
 
+	/**
+	 * Cria a intencao EndpointActivity baseada no layoyt endpoint
+	 * 
+	 * @param savedInstanceState
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -53,7 +65,16 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 				getResources().getString(R.string.URLDefautl)));
 
 	}
-	
+
+	/**
+	 * Cria o menu Endpoint
+	 * 
+	 * @param menu
+	 * @return true
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -63,7 +84,18 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 
 		return true;
 	}
-	
+
+	/**
+	 * Selecionar o Item do menu
+	 * 
+	 * @param featureId
+	 * @param item
+	 * @return true caso o menu selecionado seja o URLDefault, senão retorna
+	 *         false
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		super.onMenuItemSelected(featureId, item);
@@ -78,16 +110,25 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 		return false;
 	}
 
+	/**
+	 * Verifica o controle que foi clicado na View
+	 * 
+	 * @param View
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+
 		switch (v.getId()) {
 
 		case R.id.ButtonOk:
 
 			Validates.url = editText.getText().toString();
 
+			// Valida se é uma URL válida
 			if (Validates.validateURL()) {
 
 				// ---get the SharedPreferences object---
@@ -98,7 +139,7 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 				/* Armazena a chave "url" e endpoint */
 				editor.putString(getString(R.string.url), editText.getText()
 						.toString());
-				
+
 				// ---saves the values---
 				editor.commit();
 
@@ -112,13 +153,24 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 
 			break;
 
+		// Sai da tela endpoint
 		case R.id.ButtonBack:
 			finish();
 
 		}
-
 	}
 
+	/**
+	 * Metodo ao clicar no botao
+	 * 
+	 * @param featureId
+	 * @param id
+	 *            Dialog
+	 * @return alertDialog - Mensagem dialog
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 */
 	protected Dialog onCreateDialog(int id) {
 		if (id == DIALOG_URL) {
 
@@ -132,7 +184,5 @@ public class EndpointActivity extends Activity implements View.OnClickListener {
 
 		}
 		return null;
-
 	}
-
 }

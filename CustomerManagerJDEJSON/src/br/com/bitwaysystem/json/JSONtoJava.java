@@ -5,8 +5,28 @@ import org.json.JSONObject;
 import br.com.bitwaysystem.bean.Entity;
 import br.com.bitwaysystem.bean.ShowCustomerCreditInformation;
 
+/**
+ * JSONtoJava é a classe Base que efetua a conversão do objeto JSON para um
+ * objeto Java
+ * 
+ * @author Fernando Santiago
+ * @version %I%, %G%
+ * @since 1.0
+ * */
 public class JSONtoJava {
 
+	/**
+	 * ShowCustomerCreditInformation é o método que recebe a String JSON, faz o
+	 * parse e transforma par um objeto Java
+	 * 
+	 * @param strJSON
+	 *            - String JSON que foi recuperada pelo consumo do web services
+	 * @return showCredit - Objeto Java com as informações do cliente, ou os
+	 *         campos de erro populados com o motivo do erro
+	 * @author Fernando Santiago
+	 * @version %I%, %G%
+	 * @since 1.0
+	 * */
 	public static ShowCustomerCreditInformation showCredit(String strJson) {
 
 		Entity entity = new Entity("", "", 0);
@@ -52,20 +72,16 @@ public class JSONtoJava {
 				JSONObject userObject2 = new JSONObject(helloResponse);
 				customer.setErrorCodeBea(userObject2.getString("errorCode"));
 
-			}
-
-			else if ((userObject.has("errorHandler"))) {
+			} else if ((userObject.has("errorHandler"))) {
 
 				/* Servidor do JDE (Weblogic) fora do ar */
 
 				String errorHandler = userObject.getString("errorHandler");
 				JSONObject userObject1 = new JSONObject(errorHandler);
 				customer.setErrorCodeBea(userObject1.getString("errorCode"));
-
 			}
 
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
