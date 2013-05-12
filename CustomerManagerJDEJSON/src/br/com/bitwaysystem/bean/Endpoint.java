@@ -7,7 +7,6 @@ package br.com.bitwaysystem.bean;
  * @version %I%, %G%
  * @since 1.0
  * */
-
 public class Endpoint {
 
 	private int id;
