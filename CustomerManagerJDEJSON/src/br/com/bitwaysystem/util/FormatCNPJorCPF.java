@@ -1,7 +1,7 @@
 package br.com.bitwaysystem.util;
 
 /**
- * FormatCNPJorCPF é a classe Base que formata um CNPJ ou CPF *
+ * FormatCNPJorCPF é a classe Base que formata um CNPJ ou CPF
  * 
  * @author Fernando Santiago
  * @version %I%, %G%

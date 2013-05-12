@@ -13,7 +13,7 @@ import com.example.customermanagerjdejson.R;
 /**
  * Splash é a Classe da tela de Apresentação do programa
  * <p>
- * A tela fica carregando durante 2 segundos *
+ * A tela fica carregando durante 2 segundos
  * 
  * @author Fernando Santiago
  * @version %I%, %G%
@@ -71,7 +71,7 @@ public class Splash extends Activity implements Runnable {
 	}
 
 	/**
-	 * Efetua chamada da aplicação consulta Limite de Cŕedito *
+	 * Efetua chamada da aplicação consulta Limite de Cŕedito
 	 * 
 	 * @author Fernando Santiago
 	 * @version %I%, %G%
